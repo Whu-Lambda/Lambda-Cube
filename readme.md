@@ -2,6 +2,8 @@
 
 Whu Lambda is a community of functional programming enthusiasts, with most members coming from Wuhan University.
 
+![img](https://i0.hdslb.com/bfs/article/458e5e9a06fc15ab99f19de645db73149376a352.png@942w_668h_progressive.png)
+
 We often discuss the following three topics.
 1. the application of more pure functional languages like Haskell, OCaml in engineering practice.
 
