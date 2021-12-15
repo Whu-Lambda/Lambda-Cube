@@ -11,11 +11,13 @@ We often discuss the following three topics.
 
 In addition to these, we also welcome discussions on architecture, AI, Linux system optimization experience, and other topics.
 
+![img](https://i0.hdslb.com/bfs/article/551dfe12fef2a0aa81960059b68f6dac5ea3283b.jpg@942w_668h_progressive.jpg)
+
 Every month we will hold regular technical sharing sessions, where speakers from different schools and different knowledge backgrounds will bring their own topics of interest to you.
 
 You can find the information about each session under this repository.
 
 Whu Lambda welcomes you to join us!
 
-![img](https://user-images.githubusercontent.com/84240546/145985469-9b7e79ff-8fbf-4e05-a8a3-211283a234b9.png)
+![img](https://i0.hdslb.com/bfs/article/31035ea17378e10a0ffed9dff0d747ffd706c4ed.jpg@942w_668h_progressive.jpg)
 
