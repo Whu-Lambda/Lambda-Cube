@@ -1,0 +1,1 @@
+详细代码示例见https://github.com/choukh/Googology
