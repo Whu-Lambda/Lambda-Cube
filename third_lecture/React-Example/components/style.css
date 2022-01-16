@@ -1,0 +1,49 @@
+html {
+    height: 100%;
+    font-family: "helvetica neue", arial, sans-serif;
+  }
+  
+  body {
+    height: inherit;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  body > div {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 50%;
+    min-width: 320px;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  
+  p {
+    line-height: 1.5;
+  }
+  
+  form {
+    width: 100%;
+  }
+  
+  form > div {
+    display: flex;
+  }
+  
+  form label {
+    flex: 2;
+  }
+  
+  form input {
+    flex: 3;
+  }
+  
+  input[type="checkbox"] {
+    height: 2rem;
+  }
+  
