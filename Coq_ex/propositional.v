@@ -8,7 +8,8 @@ Variables A B C:Prop.
 
 Theorem A1: A->(B->A).
 Proof.
-  done.
+  intros.
+  auto.
 Qed.
 
 Theorem A2: (A->B->C)->(A->B)->A->C.
@@ -17,9 +18,9 @@ Proof.
   move => h2.
   move => h3.
   apply:h1.
-  done.
+  auto.
   apply:h2.
-  done.
+  auto.
 Qed.
 
 Theorem A3: A->~~A.
@@ -27,7 +28,7 @@ Proof.
   move => h1.
   move => h2.
   apply:h2.
-  done.
+  apply:h1.
 Qed.
 
 Theorem A4: False->A.
@@ -41,51 +42,53 @@ Proof.
   move => h1 h2 h3.
   apply: h2.
   apply: h1.
-  done.
+  apply: h3.
 Qed.
 
 Theorem A6: A->B->(A/\B).
 Proof.
   move => h0 h1.
   split.
-  done.
-  done.
+  apply h0.
+  apply h1.
 Qed.
 
 Theorem A7: (A/\B)->A.
 Proof.
   move => h0.
   case:h0.
-  done.
+  apply A1.
 Qed.
 
 Theorem A8: (A/\B)->B.
 Proof.
   move => h0.
   case:h0.
-  done.
+  move => h1.
+  move => h2.
+  apply:h2.
 Qed.
 
 Theorem A9: A->(A\/B).
 Proof.
   move => h0.
   left.
-  done.
+  apply:h0.
 Qed.
 
 Theorem A10: B->(A\/B).
 Proof.
   move => h0.
   right.
-  done.
+  apply:h0.
 Qed.
 
 Theorem A11: (A\/B)->(A->C)->(B->C)->C.
 Proof.
   move => h0 h1 h2.
   case:h0.
-  done.
-  done.
+  apply:h1.
+  apply:h2.
 Qed.
 
 
@@ -96,7 +99,7 @@ Proof.
   move => h0 h1 h2.
   apply: h1.
   apply: h0.
-  done.
+  apply: h2.
 Qed.
 
 (* P <-> Q is a shortcut for (P -> Q) /\ (Q -> P): manipulate it like a
@@ -109,14 +112,14 @@ Proof.
     case: h0.
     move => h0 h1.
     split.
-      done.
-    done.
+      apply: h1.
+      apply: h0.
   move => h0.
   case: h0.
   move => h0 h1.
   split.
-    done.
-  done.
+    apply: h1.
+    apply: h0.
 Qed.
 
 
@@ -127,18 +130,18 @@ Proof.
     case: h0.
       move => h0.
       right.
-      done.
+      apply: h0.
     move => h0.
     left.
-    done.
+    apply: h0.
   move => h0.
   case: h0.
     move => h0.
     right.
-    done.
+    apply: h0.
   move => h0.
   left.
-  done.
+  apply: h0.
 Qed.
 
 
@@ -149,9 +152,9 @@ Proof.
   move => h1 h2.
   case: h0.
     apply.
-    done.
+    apply: h1.
   apply.
-  done.
+  apply: h2.
 Qed.
 
 
@@ -164,20 +167,20 @@ Proof.
     case: h1.
       move => h1.
       apply: h0.
-      done.
+      apply h1.
     move => h1.
     apply: h2.
-    done.
+    apply: h1.
   move => h0.
   split.
     move => h1.
     apply: h0.
     left.
-    done.
+    apply: h1.
   move => h1.
   apply: h0.
   right.
-  done.
+  apply: h1.
 Qed.
 
 
@@ -187,14 +190,14 @@ Proof.
     move => h0 h1 h2.
     apply: h0.
     split.
-      done.
-    done.
+      apply: h1.
+      apply: h2.
   move => h0 h1.
   case: h1.
   move => h1 h2.
   apply: h0.
-    done.
-  done.
+  apply: h1.
+  apply: h2.
 Qed.
 
 
@@ -209,7 +212,7 @@ Proof.
   move => h1.
   apply: h0.
   left.
-  done.
+  apply: h1.
 Qed.
 
 Lemma peirce : ~~ (((A -> B) -> A) -> A).
@@ -219,7 +222,8 @@ Proof.
   apply.
   move => h2.
   elim: h0.
-  done.
+  move => h1.
+  apply: h2.
 Qed.
 
 
@@ -230,5 +234,6 @@ Proof.
   elim.
   move => h1.
   apply: h0.
-  done.
+  move => h2.
+  apply: h1.
 Qed.
